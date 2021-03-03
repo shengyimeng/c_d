@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main() {
+	int num;
+	int mod = 0;
+	int m = 0;
+	scanf("%d",&num);
+	for(int n = 0; n<num+1;n++){
+		m = n;
+		mod = 0;
+		while(m>0){
+			if(m%2 == 1){
+				mod = mod+1;		
+			}
+			m = m/2;
+		}
+		printf("%d",mod);
+	}
+	return 0;
+}
