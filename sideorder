@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include<string.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main() {
+	char s[]="dfbace";
+	int a=0;
+	while(s[a]!='a'){
+		a++;
+	}
+	int trouble=0;
+	for(int left=a;left>0;left--){
+		if(s[left]>s[left-1]){
+			trouble++;
+		}
+	}
+	for(int right=a;right<(int)strlen(s);right++){
+		if(s[right]>s[right+1]){
+			trouble++;
+		}
+	}
+	for(int m=a+(int)strlen(s)-1;m>a;m--){
+		int same=0;
+		for(int b=0;b<(int)strlen(s);b++){
+			if(s[b]==m){
+				same++;
+		    }
+		}
+		if(same!=1){
+			trouble++;
+		}
+	}
+	if(trouble!=0){
+		printf("No");
+	}
+	else{
+		printf("Yes");
+	}
+
+
+	return 0;
+}
